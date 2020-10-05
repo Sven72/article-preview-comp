@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  --very-dark-blue: hsl(217, 19%, 35%);
+  --desaturated-blue: hsl(214, 17%, 51%);
+  --gray-blue: hsl(212, 23%, 69%);
+  --light-gray-blue: hsl(210, 46%, 95%);
+  font-family: "Manrope", sans-serif;
+}
+
+/* If not set on html body needs to be set to 100vh */
+html {
+  height: 100%;
+}
+body {
+  background-color: var(--light-gray-blue);
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 13px;
+  padding: 1em;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  height: auto;
+  margin: 2em;
+  background-color: #ffff;
+  border: 1px solid red;
+  border-radius: 10px;
+  max-width: 1000px;
+  position: relative;
+}
+
+h1 {
+  display: inline-block;
+  padding: 2em;
+}
+
+.hero--copy {
+  padding: 2em;
+}
+
+.hero--image {
+  width: 100%;
+  display: block;
+  /* Why does it work with vh instead of % */
+  height: 33vh;
+  background-image: url("../images/drawers.jpg");
+  /* Checken */
+  background-repeat: no-repeat;
+  background-position: bottom center left;
+  /* Abkürzung des Properties? */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* white border beneath image */
+
+.hero--headline {
+  font-size: 1.3em;
+  font-weight: 700;
+  line-height: 1.3em;
+  color: var(--very-dark-blue);
+}
+
+.hero--copy {
+  color: var(--desaturated-blue);
+  line-height: 1.6em;
+  font-size: 1.3em;
+  margin-top: 0;
+  padding-top: 0;
+  font-weight: 500;
+}
+
+.hero--author {
+  height: 10%;
+  font-size: 1em;
+  display: flex;
+  padding-bottom: 1em;
+  margin-top: 10em;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.img--author {
+  width: 15%;
+  border-radius: 50%;
+  max-width: 70px;
+  margin-left: 2em;
+}
+
+.author--content-wrapper {
+  margin-right: auto;
+  margin-left: 1em;
+  line-height: 4px;
+}
+.author--name {
+  color: var(--very-dark-blue);
+  font-weight: 700;
+  margin-bottom: auto;
+}
+
+.publish--date {
+  color: var(--gray-blue);
+}
+
+.share--icon {
+  background-color: var(--light-gray-blue);
+  padding: 0.8em;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 1em;
+}
+
+.share--icon:hover {
+  background-color: red;
+}
+
+.share {
+  position: relative;
+}
+
+.share--bar {
+  display: none;
+  /* display: flex; */
+  justify-content: space-around;
+  align-items: center;
+  min-width: 100%;
+  position: absolute;
+  bottom: 0px;
+  padding: 1em 1.8em;
+  border-radius: 0.75em;
+  background-color: var(--very-dark-blue);
+  box-shadow: 0px 10px 30px hsl(210, 46%, 95%);
+}
+
+.share--bar p {
+  text-transform: uppercase;
+  color: var(--light-gray-blue);
+}
+
+.visible {
+  display: flex;
+}
+
+@media (min-width: 750px) {
+  .flex-container {
+    flex-direction: row;
+    align-self: flex-end;
+    /* padding-right: 2em; */
+    margin: 0 auto;
+    width: 90vw;
+  }
+
+  .hero--image {
+    border-top-right-radius: 0;
+    height: 100%;
+  }
+
+  .hero--headline {
+    font-size: 1.5rem;
+  }
+  .content-wrapper {
+    margin-left: 2em;
+  }
+  .img--author {
+    width: 10%;
+    margin-bottom: -10px;
+  }
+
+  .share--bar {
+    position: absolute;
+    min-width: 60%;
+    max-width: 335px;
+    margin: 10em;
+    margin-left: 25em;
+  }
+
+  .share--bar::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 50px solid var(--very-dark-blue);
+    margin-bottom: -9em;
+    margin-right: 30%;
+  }
+  #shareBarBtnAfter {
+    display: none;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 10em;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
